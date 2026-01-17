@@ -18,7 +18,7 @@ interface TopBarProps {
 
 export function TopBar({ breadcrumbs, darkMode, onToggleDarkMode, onOpenSettings }: TopBarProps) {
   return (
-    <div className="h-16 border-b border-border bg-card px-6 flex items-center justify-between">
+    <div className="h-16 border-b border-border bg-card/80 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-40 shadow-sm">
       {/* Breadcrumbs */}
       <Breadcrumb>
         <BreadcrumbList>

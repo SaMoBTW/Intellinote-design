@@ -160,51 +160,71 @@ export default function App() {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-card border-t border-border p-2 flex justify-around items-center z-50 shadow-lg">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-card/80 backdrop-blur-md border-t border-border p-2 flex justify-around items-center z-50 shadow-lg">
         <button
           onClick={() => setCurrentView('library')}
-          className={`flex flex-col items-center gap-0.5 px-2 py-1 min-w-0 ${
-            currentView === 'library' ? 'text-primary' : 'text-muted-foreground'
+          className={`flex flex-col items-center gap-0.5 px-3 py-2 min-w-0 rounded-xl transition-all duration-200 ${
+            currentView === 'library' 
+              ? 'text-primary bg-primary/10 scale-110' 
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <LibraryIcon className="w-5 h-5" />
-          <span className="text-[10px]">Library</span>
+          <LibraryIcon className={`transition-all duration-200 ${
+            currentView === 'library' ? 'w-6 h-6' : 'w-5 h-5'
+          }`} />
+          <span className="text-[10px] font-medium">Library</span>
         </button>
         <button
           onClick={() => setCurrentView('summary')}
-          className={`flex flex-col items-center gap-0.5 px-2 py-1 min-w-0 ${
-            currentView === 'summary' ? 'text-primary' : 'text-muted-foreground'
+          className={`flex flex-col items-center gap-0.5 px-3 py-2 min-w-0 rounded-xl transition-all duration-200 ${
+            currentView === 'summary' 
+              ? 'text-primary bg-primary/10 scale-110' 
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <FileText className="w-5 h-5" />
-          <span className="text-[10px]">Summary</span>
+          <FileText className={`transition-all duration-200 ${
+            currentView === 'summary' ? 'w-6 h-6' : 'w-5 h-5'
+          }`} />
+          <span className="text-[10px] font-medium">Summary</span>
         </button>
         <button
           onClick={() => setCurrentView('dashboard')}
-          className={`flex flex-col items-center gap-0.5 px-2 py-1 min-w-0 ${
-            currentView === 'dashboard' ? 'text-primary' : 'text-muted-foreground'
+          className={`flex flex-col items-center gap-0.5 px-3 py-2 min-w-0 rounded-xl transition-all duration-200 ${
+            currentView === 'dashboard' 
+              ? 'text-primary bg-primary/10 scale-110' 
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <Home className="w-5 h-5" />
-          <span className="text-[10px]">Home</span>
+          <Home className={`transition-all duration-200 ${
+            currentView === 'dashboard' ? 'w-6 h-6' : 'w-5 h-5'
+          }`} />
+          <span className="text-[10px] font-medium">Home</span>
         </button>
         <button
           onClick={() => setCurrentView('flashcards')}
-          className={`flex flex-col items-center gap-0.5 px-2 py-1 min-w-0 ${
-            currentView === 'flashcards' ? 'text-primary' : 'text-muted-foreground'
+          className={`flex flex-col items-center gap-0.5 px-3 py-2 min-w-0 rounded-xl transition-all duration-200 ${
+            currentView === 'flashcards' 
+              ? 'text-primary bg-primary/10 scale-110' 
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <Brain className="w-5 h-5" />
-          <span className="text-[10px]">Cards</span>
+          <Brain className={`transition-all duration-200 ${
+            currentView === 'flashcards' ? 'w-6 h-6' : 'w-5 h-5'
+          }`} />
+          <span className="text-[10px] font-medium">Cards</span>
         </button>
         <button
           onClick={() => setCurrentView('quizzes')}
-          className={`flex flex-col items-center gap-0.5 px-2 py-1 min-w-0 ${
-            currentView === 'quizzes' ? 'text-primary' : 'text-muted-foreground'
+          className={`flex flex-col items-center gap-0.5 px-3 py-2 min-w-0 rounded-xl transition-all duration-200 ${
+            currentView === 'quizzes' 
+              ? 'text-primary bg-primary/10 scale-110' 
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <ClipboardList className="w-5 h-5" />
-          <span className="text-[10px]">Quizzes</span>
+          <ClipboardList className={`transition-all duration-200 ${
+            currentView === 'quizzes' ? 'w-6 h-6' : 'w-5 h-5'
+          }`} />
+          <span className="text-[10px] font-medium">Quizzes</span>
         </button>
       </div>
 
