@@ -182,22 +182,22 @@
   /* Custom shimmer animation for loading states */
   @keyframes shimmer {
     0% {
-      background-position: -1000px 0;
+      background-position: -200% 0;
     }
     100% {
-      background-position: 1000px 0;
+      background-position: 200% 0;
     }
   }
 
   .animate-shimmer {
-    animation: shimmer 2s infinite linear;
+    animation: shimmer 2s infinite ease-in-out;
     background: linear-gradient(
-      to right,
-      var(--muted) 4%,
-      var(--accent) 25%,
-      var(--muted) 36%
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
     );
-    background-size: 1000px 100%;
+    background-size: 200% 100%;
   }
 
   /* Perspective for 3D card flip */

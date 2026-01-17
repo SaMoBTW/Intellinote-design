@@ -4,12 +4,14 @@ import { Progress } from './ui/progress';
 import { Button } from './ui/button';
 import { TopBar } from './TopBar';
 import { AddContentDialog } from './AddContentDialog';
+import { DashboardSkeleton } from './Skeleton';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 
 interface DashboardProps {
   onNavigateToStudy: (documentId: string) => void;
   userName?: string;
+  isLoading?: boolean;
 }
 
 interface Document {
@@ -91,7 +93,7 @@ function EmptyLibraryState({ onUpload }: { onUpload: () => void }) {
   );
 }
 
-export function Dashboard({ onNavigateToStudy, userName = "Student" }: DashboardProps) {
+export function Dashboard({ onNavigateToStudy, userName = "Student", isLoading = false }: DashboardProps) {
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) return 'Good morning';
@@ -112,6 +114,11 @@ export function Dashboard({ onNavigateToStudy, userName = "Student" }: Dashboard
   };
 
   const [isUploadDialogOpen, setUploadDialogOpen] = useState(false);
+
+  // Show loading skeleton if loading
+  if (isLoading) {
+    return <DashboardSkeleton />;
+  }
 
   return (
     <div className="flex-1 overflow-auto">

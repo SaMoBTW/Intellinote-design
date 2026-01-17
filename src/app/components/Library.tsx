@@ -5,6 +5,7 @@ import { Badge } from './ui/badge';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { AddContentDialog } from './AddContentDialog';
+import { LibrarySkeleton } from './Skeleton';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,7 @@ import {
 
 interface LibraryProps {
   onSelectDocument: (documentId: string) => void;
+  isLoading?: boolean;
 }
 
 interface Document {
@@ -70,7 +72,7 @@ const mockDocuments: Document[] = [
   },
 ];
 
-export function Library({ onSelectDocument }: LibraryProps) {
+export function Library({ onSelectDocument, isLoading }: LibraryProps) {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isAddDialogOpen, setAddDialogOpen] = useState(false);
 
@@ -113,7 +115,9 @@ export function Library({ onSelectDocument }: LibraryProps) {
         </div>
 
         {/* Documents Grid/List */}
-        {viewMode === 'grid' ? (
+        {isLoading ? (
+          <LibrarySkeleton />
+        ) : viewMode === 'grid' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {mockDocuments.map((doc, index) => (
               <motion.div
