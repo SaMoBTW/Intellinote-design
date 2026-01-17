@@ -1,7 +1,7 @@
 
   # IntelliNote
 
-  This is a code bundle for IntelliNote. The original project is available at https://www.figma.com/design/OpHArKb5EzeYMczJWU94ed/IntelliNote.
+  This is a code bundle for IntelliNote's design.
 
   ## Running the code
 
